@@ -4,7 +4,7 @@ on:
   release:
     branches: [ "main" ]
   push:
-    branches: [ "main", "ci_cd" ]
+    branches: [ "develop" ]
 
 env:
   # The name of the main module repository
@@ -46,5 +46,5 @@ jobs:
     - name: Upload APK Release - ${{ env.repository_name }}
       uses: actions/upload-artifact@v3
       with:
-        name: ${{ env.date_today }} - ${{ env.repository_name }} - APK(s) release generated
+        name: ${{ env.repository_name }} - Release APK
         path: ${{ env.main_project_module }}/build/outputs/apk/release/
