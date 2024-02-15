@@ -1,4 +1,4 @@
-package com.anki.notifications
+package com.ankidroid.companion
 
 import org.junit.Test
 

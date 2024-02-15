@@ -1,4 +1,4 @@
-package com.anki.notifications;
+package com.ankidroid.companion;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

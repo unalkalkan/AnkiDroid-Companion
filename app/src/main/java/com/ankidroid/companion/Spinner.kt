@@ -1,4 +1,4 @@
-package com.anki.notifications
+package com.ankidroid.companion
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

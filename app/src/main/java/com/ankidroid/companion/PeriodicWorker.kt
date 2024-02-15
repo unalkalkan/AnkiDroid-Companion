@@ -1,4 +1,4 @@
-package com.anki.notifications
+package com.ankidroid.companion
 
 import android.content.Context
 import android.os.Handler

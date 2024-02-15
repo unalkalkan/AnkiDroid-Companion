@@ -1,4 +1,4 @@
-package com.anki.notifications
+package com.ankidroid.companion
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

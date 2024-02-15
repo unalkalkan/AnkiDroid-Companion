@@ -1,4 +1,4 @@
-package com.anki.notifications;
+package com.ankidroid.companion;
 
 import android.net.Uri;
 import org.json.JSONArray;

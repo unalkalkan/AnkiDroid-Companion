@@ -1,4 +1,4 @@
-package com.anki.notifications;
+package com.ankidroid.companion;
 
 public class StoredState {
     long deckId;

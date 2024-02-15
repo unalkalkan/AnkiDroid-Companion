@@ -1,4 +1,4 @@
-package com.anki.notifications
+package com.ankidroid.companion
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -46,7 +46,7 @@ class MainActivity : ComponentActivity() {
         Log.i("BackgroundService", "startBackgroundService called from MainActivity")
         val periodicWorkRequest = PeriodicWorkRequest.Builder(
             PeriodicWorker::class.java,
-            15, TimeUnit.MINUTES
+            8, TimeUnit.HOURS
         ).build()
         WorkManager.getInstance(this).enqueueUniquePeriodicWork(
             "WORKER_ANKI",

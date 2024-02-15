@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.anki.notifications"
+    namespace = "com.ankidroid.companion"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.anki.notifications"
+        applicationId = "com.ankidroid.companion"
         minSdk = 33
         targetSdk = 34
         versionCode = 1

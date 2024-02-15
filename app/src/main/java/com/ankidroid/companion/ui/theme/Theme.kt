@@ -1,4 +1,4 @@
-package com.anki.notifications.ui.theme
+package com.ankidroid.companion.ui.theme
 
 import android.app.Activity
 import android.os.Build
