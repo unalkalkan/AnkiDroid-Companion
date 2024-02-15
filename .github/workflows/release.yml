@@ -1,0 +1,63 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+env:
+  # The name of the main module repository
+  main_project_module: app
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set env
+      run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+    
+    - name: release
+      uses: actions/create-release@v1
+      id: create_release
+      with:
+        draft: false
+        prerelease: false
+        release_name: ${{ env.RELEASE_VERSION }}
+        tag_name: ${{ github.ref }}
+        # body_path: CHANGELOG.md
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+    
+    # Set Repository Name As Env Variable
+    - name: Set repository name as env variable
+      run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+
+    - name: Set Up JDK
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu' # See 'Supported distributions' for available options
+        java-version: '17'
+        cache: 'gradle'
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    
+    - name: Build with Gradle
+      run: ./gradlew build
+    
+    # Create APK Release
+    - name: Build apk release project (APK) - ${{ env.main_project_module }} module
+      run: ./gradlew assemble
+    
+    - name: Upload Release Assets
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_name: ${{ env.repository_name }}-${{ env.RELEASE_VERSION }}.apk
+        asset_path: ${{ env.main_project_module }}/build/outputs/apk/release/app-release-unsigned.apk
+        asset_content_type: application/vnd.android.package-archive
