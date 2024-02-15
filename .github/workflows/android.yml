@@ -23,12 +23,12 @@ jobs:
     - name: Set repository name as env variable
       run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
 
-    - name: set up JDK 11
+    - name: Set Up JDK
       uses: actions/setup-java@v3
       with:
-        java-version: '11'
-        distribution: 'temurin'
-        cache: gradle
+        distribution: 'zulu' # See 'Supported distributions' for available options
+        java-version: '17'
+        cache: 'gradle'
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
