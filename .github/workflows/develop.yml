@@ -40,5 +40,5 @@ jobs:
     - name: Upload APK Debug - ${{ env.repository_name }}
       uses: actions/upload-artifact@v3
       with:
-        name: ${{ env.repository_name }} - Debug
-        path: ${{ env.main_project_module }}/build/outputs/apk/debug/
+        name: ${{ env.repository_name }} - Debug.apk
+        path: ${{ env.main_project_module }}/build/outputs/apk/debug/app-debug.apk

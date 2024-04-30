@@ -34,9 +34,7 @@ To get started with AnkiDroid Companion, follow these steps:
 
 
 ## Limitations & Improvements
-
-- **Android API Level**: Only Android 13 and 14 is supported at the moment. Since this was a weekend project for me (who had no prior knowledge about the Android Ecosystem), I didn't had the opportunity to test the app below these API Levels. If you like to try out the lower APIs and see if they work, give it a try!
-    
+  
 - **Minimalistic Card Support**: Currently this app only supports simple cards with small texts that doesn't include any HTML. If your case involves complex scenarios, you can try to implement them or create an issue for someone with more time to pick up.
 
 - **Skipping Cards**: Skipping cards was not something that came to my mind just until now, we need to came up with a way to do this since when a skip is needed its going to be a pain with the current setup.
