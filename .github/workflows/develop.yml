@@ -2,7 +2,7 @@ name: Android CI
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "main" ]
 
 env:
   # The name of the main module repository
