@@ -4,6 +4,9 @@ AnkiDroid Companion is an extension app designed to enhance the functionality of
 
 ![](.github/output.gif)
 
+> [!NOTE]
+> If you're looking for an improved, actively maintained version of this project, check out this fork; [Micro Review for AnkiDroid](https://github.com/BenoitMarchand/Micro_Review_for_AnkiDroid).
+> This project will work as is, but I won't be actively maintaining it.
 
 ## Features
 
